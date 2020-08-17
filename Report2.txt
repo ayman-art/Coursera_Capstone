@@ -1,0 +1,19 @@
+      REPORT
+       
+         ****************************************************************************       
+       
+         Introduction/Business Problem section
+         
+         
+         Clearly, the problem is using a location data provider(foursquare) to know the chinese venues inside New York with a specific area limit Definitely,it will be very useful for those who come from china and travel to New York and want to know the chinese places in the region
+        
+         
+         
+         
+        *******************************************************************************
+        
+        Discribing the data used in that project
+        
+        
+        In this project, we will use foursquare specific data including the creditials, and the address passed to the API URL.
+        NO other data will be used.
