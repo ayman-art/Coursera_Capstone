@@ -1,0 +1,14 @@
+      REPORT
+       
+       
+       
+         Introduction/Business Problem section
+         
+         
+         Clearly, the problem is using a location data provider(foursquare) to know the chinese venues inside New York with a specific area limit Definitely,it will be very useful for those who come from china and travel to New York and want to know the chinese places in the region
+        
+         
+         
+         
+        *******************************************************************************
+        
