@@ -1,0 +1,128 @@
+   Presentation
+       
+         ****************************************************************************       
+       
+        === Introduction/Business Problem section
+         
+         
+         Clearly, the problem is using a location data provider(foursquare) to know the chinese venues inside New York with a specific area limit
+         Definitely,it will be very useful for those who come from china and travel to New York and want to know the chinese places in the region
+        
+         
+         
+         
+        *******************************************************************************
+        
+        ===   Discribing the data used in that project
+        
+        
+        In this project, we will use foursquare specific data including the creditials, and the address passed to the API URL.
+        NO other data will be used. For example, we used the fouesqare api to search for near chinese places by passing a venue of 'Chinese'
+
+
+
+
+        *********************************************************************************
+        
+        === Methodology
+        
+        All what we want in this project is to find near chinese places in New York 
+        
+        So first we include the data required by the foursquare 
+        ///////
+        CLIENT_ID = 'FOERNFLVSSIN2X45T0OP3GXZAKZSM0VCWVGTTIWG23WG53JZ' # your Foursquare ID
+CLIENT_SECRET = 'IHLUHIXCLZEIJUGZOTZRLESDD0TI1TXIJQ20T2TYVMK1QL2V' # your Foursquare Secret
+VERSION = '20180604'
+LIMIT = 30
+print('Your credentails:')
+print('CLIENT_ID: ' + CLIENT_ID)
+print('CLIENT_SECRET:' + CLIENT_SECRET)
+
+Your credentails:
+CLIENT_ID: FOERNFLVSSIN2X45T0OP3GXZAKZSM0VCWVGTTIWG23WG53JZ
+CLIENT_SECRET:IHLUHIXCLZEIJUGZOTZRLESDD0TI1TXIJQ20T2TYVMK1QL2V
+         ///////
+         
+Specifying the address
+          ///////
+address = ' New York, NY'
+
+geolocator = Nominatim(user_agent="foursquare_agent")
+location = geolocator.geocode(address)
+latitude = location.latitude
+longitude = location.longitude
+print(latitude, longitude)
+
+40.7127281 -74.0060152
+         ///////
+         
+ Filtering the data
+ 
+ ///////
+                            name          categories         address  \
+0  Chinese Wah Lai Funeral Home        Funeral Home  22 Mulberry St   
+1        Chinese Qigong Massage      Massage Studio     68 White St   
+2      Taste Chinese Restaurant  Chinese Restaurant   178 Church St   
+3   Downtown Chinese Restaurant                Food     135 John St   
+4                      China 59  Chinese Restaurant    59 Nassau St   
+5            Win Won Restaurant  Chinese Restaurant   10 Liberty Pl   
+
+         lat        lng                                     labeledLatLngs  \
+0  40.714170 -73.999417  [{'label': 'display', 'lat': 40.71417, 'lng': ...   
+1  40.718224 -74.003281  [{'label': 'display', 'lat': 40.71822357177734...   
+2  40.715690 -74.007605  [{'label': 'display', 'lat': 40.7156902, 'lng'...   
+3  40.707134 -74.004944  [{'label': 'entrance', 'lat': 40.707098, 'lng'...   
+4  40.709178 -74.008958  [{'label': 'display', 'lat': 40.70917839380905...   
+5  40.709193 -74.009344  [{'label': 'display', 'lat': 40.709193, 'lng':...   
+
+   distance postalCode  cc      city state        country  \
+0       579      10013  US  New York    NY  United States   
+1       653      10013  US  New York    NY  United States   
+2       355      10013  US  New York    NY  United States   
+3       629      10038  US  New York    NY  United States   
+4       466      10038  US  New York    NY  United States   
+5       483      10038  US  New York    NY  United States   
+
+                                    formattedAddress  \
+0  [22 Mulberry St, New York, NY 10013, United St...   
+1  [68 White St (Broadway And Church), New York, ...   
+2  [178 Church St, New York, NY 10013, United Sta...   
+3   [135 John St, New York, NY 10038, United States]   
+4  [59 Nassau St (btwn Maiden Lane & John St), Ne...   
+5  [10 Liberty Pl (Maiden Lane), New York, NY 100...   
+
+                  crossStreet                        id  
+0                         NaN  4d9f5e228e8f224bcd8ca256  
+1         Broadway And Church  51be2d6f498e7a73436bd59a  
+2                         NaN  581299bb38fa2e54303f6891  
+3                         NaN  4f320f6d19833175d60c8d97  
+4  btwn Maiden Lane & John St  4a982c7af964a520cc2a20e3  
+5                 Maiden Lane  4b88199af964a520e6df31e3  
+/////////
+
+
+SHOWING THE NUMBER OF CHINESE VENUES
+
+filtersed_data.shape
+(6, 15)
+
+         
+         
+         
+        *******************************************************************************
+        Result Section
+        
+        From above we can see that there are 5  Cinese places in the centre of New York with a radius '500' which is very quite little.
+        
+        ******************************************************************************
+        Discussion section 
+        Although, there are some chinese places in New York(5) but there should be a little bit more
+        
+        *******************************************************************************
+        
+        Conclusion Section
+        
+        To conclude, we knew the data and the audience. we recognized the chinese places in New York an how many they are.
+        
+        
+        
