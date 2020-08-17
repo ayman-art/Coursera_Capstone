@@ -17,4 +17,4 @@
         
         
         In this project, we will use foursquare specific data including the creditials, and the address passed to the API URL.
-        NO other data will be used.
+        NO other data will be used. For example, we used the fouesqare api to search for near chinese places by passing a venue of 'Chinese'
